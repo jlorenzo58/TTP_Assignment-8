@@ -4,8 +4,8 @@ class UserProfile extends Component {
   render() {
     return (
         <div>
+         <Link to="/">Go Home</Link>
           <h1>User Profile</h1>
-          <Link to="/">Go Home</Link>
           <div>Username: {this.props.userName}</div>
           <div>Member Since: {this.props.memberSince}</div>
         </div>

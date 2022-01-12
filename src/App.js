@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login';
@@ -17,7 +17,6 @@ class App extends Component {
         memberSince: '08/23/99',
       }
     }
-    this.mockLogIn = this.mockLogIn.bind(this);
   }
 
   mockLogIn = (logInInfo) => {
@@ -34,12 +33,16 @@ class App extends Component {
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
     
     return (
-        <Router>
-          <div>
+      <Router>
+      <div>
+          <Routes>
             <Route exact path="/" element={<HomeComponent/>}/>
             <Route exact path="/userProfile" element={<UserProfileComponent/>}/>
             <Route exact path="/login" element={<LogInComponent/>}/>
-          </div>
+          </Routes>
+        </div>
+
+          
         </Router>
     );
   }
