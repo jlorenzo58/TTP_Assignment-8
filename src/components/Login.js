@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Navigate } from 'react-router-dom'
 
 class LogIn extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       user: {
         userName: '',
